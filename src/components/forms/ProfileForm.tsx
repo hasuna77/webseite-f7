@@ -1,0 +1,49 @@
+"use client";
+
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
+import { Loader2 } from "lucide-react";
+import { updateProfileAction, type ActionState } from "@/actions/auth";
+
+const initialState: ActionState = { status: "idle" };
+
+function SubmitButton({ label }: { label: string }) {
+  const { pending } = useFormStatus();
+  return (
+    <button
+      type="submit"
+      disabled={pending}
+      className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-50"
+    >
+      {pending && <Loader2 className="h-4 w-4 animate-spin" />}
+      {label}
+    </button>
+  );
+}
+
+export function ProfileForm({ name }: { name: string }) {
+  const [state, formAction] = useActionState(updateProfileAction, initialState);
+
+  return (
+    <form action={formAction} className="space-y-4">
+      <div>
+        <label htmlFor="name" className="text-sm text-ink-soft">
+          Name
+        </label>
+        <input
+          id="name"
+          name="name"
+          defaultValue={name}
+          required
+          className="mt-1.5 w-full max-w-sm rounded-xl border border-beige-dark/40 bg-paper px-4 py-2.5 text-sm text-ink outline-none focus:border-green focus:ring-1 focus:ring-green"
+        />
+      </div>
+      {state.message && (
+        <p className={`text-sm ${state.status === "error" ? "text-red-700" : "text-green-dark"}`}>
+          {state.message}
+        </p>
+      )}
+      <SubmitButton label="Profil speichern" />
+    </form>
+  );
+}
