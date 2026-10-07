@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, Aperture, Briefcase, Heart, Package, PartyPopper } from "lucide-react";
-import { Container, Eyebrow } from "@/components/ui/Container";
+import { Container } from "@/components/ui/Container";
+import { PageHero } from "@/components/sections/PageHero";
 import { CTASection } from "@/components/sections/CTASection";
 import { business, services } from "@/lib/content/business";
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
@@ -35,18 +36,11 @@ export default function LeistungenPage() {
         }}
       />
 
-      <section className="bg-ink pb-20 pt-36 text-white lg:pt-44">
-        <Container>
-          <Eyebrow>Leistungen</Eyebrow>
-          <h1 className="mt-4 max-w-2xl font-display text-5xl sm:text-6xl">
-            Fotografie für jeden Anlass.
-          </h1>
-          <p className="mt-6 max-w-xl text-white/70">
-            Ob Portrait, Unternehmen, Hochzeit oder Produkt – jedes Shooting bekommt bei uns ein
-            klares Konzept, professionelles Licht und eine ehrliche Preisstruktur.
-          </p>
-        </Container>
-      </section>
+      <PageHero
+        eyebrow="Leistungen"
+        title="Fotografie für jeden Anlass."
+        description="Ob Portrait, Unternehmen, Hochzeit oder Produkt – jedes Shooting bekommt bei uns ein klares Konzept, professionelles Licht und eine ehrliche Preisstruktur."
+      />
 
       <section className="bg-paper py-20 lg:py-28">
         <Container className="grid gap-6">

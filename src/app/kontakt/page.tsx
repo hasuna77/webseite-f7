@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { Container, Eyebrow } from "@/components/ui/Container";
+import { Container } from "@/components/ui/Container";
+import { PageHero } from "@/components/sections/PageHero";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { business } from "@/lib/content/business";
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
@@ -26,21 +27,11 @@ export default function KontaktPage() {
         }}
       />
 
-      <section className="bg-ink pb-20 pt-36 text-white lg:pt-44">
-        <Container>
-          <Eyebrow>Kontakt</Eyebrow>
-          <h1 className="mt-4 max-w-2xl font-display text-5xl sm:text-6xl">
-            Lass uns reden.
-          </h1>
-          <p className="mt-6 max-w-xl text-white/70">
-            Erzähl uns kurz von deinem Vorhaben – wir melden uns in der Regel innerhalb von 24
-            Stunden mit nächsten Schritten und freien Terminen. Egal ob Portrait, Business-Shooting,
-            Hochzeit, Produktfotografie oder Event: Je mehr wir über Anlass, Wunschtermin und Ort
-            wissen, desto schneller können wir dir ein passendes Angebot machen. Du erreichst uns
-            auch außerhalb der Öffnungszeiten per E-Mail – wir melden uns am nächsten Werktag.
-          </p>
-        </Container>
-      </section>
+      <PageHero
+        eyebrow="Kontakt"
+        title="Lass uns reden."
+        description="Erzähl uns kurz von deinem Vorhaben – wir melden uns in der Regel innerhalb von 24 Stunden mit nächsten Schritten und freien Terminen. Egal ob Portrait, Business-Shooting, Hochzeit, Produktfotografie oder Event: Je mehr wir über Anlass, Wunschtermin und Ort wissen, desto schneller können wir dir ein passendes Angebot machen. Du erreichst uns auch außerhalb der Öffnungszeiten per E-Mail – wir melden uns am nächsten Werktag."
+      />
 
       <section className="bg-paper py-20 lg:py-28">
         <Container className="grid gap-16 lg:grid-cols-[1fr_1.2fr]">

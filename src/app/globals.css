@@ -1,19 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  /* Marke: Beige / Schwarz / Weiß / Grün (Mittelton) */
-  --color-paper: #fdfbf6;
-  --color-paper-soft: #f6f1e7;
-  --color-beige: #ece1c8;
-  --color-beige-dark: #cdb98c;
-  --color-ink: #12120f;
-  --color-ink-soft: #322f28;
+  /* Hauptfarben: Beige & Weiß. Schwarz ist Schriftfarbe (und das einzige
+     dunkle Flächenelement: Footer). Grün ist ausschließlich Akzentfarbe
+     (Buttons, Icons, Links, kleine Hervorhebungen) – niemals Flächenfarbe. */
+  --color-paper: #fffefb;
+  --color-paper-soft: #f6efdf;
+  --color-beige: #ead9b9;
+  --color-beige-dark: #c9ad7c;
+  --color-ink: #17160f;
+  --color-ink-soft: #4a4636;
   --color-green: #4b7355;
   --color-green-light: #8fae8d;
-  --color-green-dark: #263b2b;
+  --color-green-dark: #2e4a33;
   --color-white: #ffffff;
 
-  --shadow-soft: 0 20px 60px -20px rgba(18, 18, 15, 0.25);
+  --shadow-soft: 0 24px 70px -24px rgba(23, 22, 15, 0.18);
   --ease-elegant: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -29,8 +31,8 @@
   --color-green-dark: var(--color-green-dark);
   --color-white: var(--color-white);
 
-  --font-display: var(--font-fraunces);
-  --font-sans: var(--font-inter);
+  --font-display: var(--font-bodoni);
+  --font-sans: var(--font-work-sans);
 }
 
 html {
@@ -65,7 +67,6 @@ body {
   text-wrap: balance;
 }
 
-/* dünner, eleganter Scrollbalken */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -77,15 +78,31 @@ body {
   border-radius: 999px;
 }
 
-.bg-grain {
-  position: relative;
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
+.animate-fade-up {
+  animation: fade-up 0.9s var(--ease-elegant) both;
+}
+
+/* Kein eigenes `position` hier: diese Klasse wird immer zusammen mit einer
+   Tailwind-Positionierungsklasse (absolute/relative) verwendet. Ein
+   eigenes `position: relative` würde als unlayered Style Tailwinds
+   `.absolute`-Utility im Cascade-Layer überstimmen und Layouts brechen. */
 .bg-grain::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
   opacity: 0.035;
-  mix-blend-mode: overlay;
+  mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }

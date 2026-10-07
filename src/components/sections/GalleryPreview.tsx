@@ -7,12 +7,12 @@ import { ScrollReveal, ScrollStagger, staggerItem } from "@/components/motion/Sc
 import { motion } from "framer-motion";
 
 const TILES = [
-  { label: "Portrait", gradient: "from-ink via-green-dark to-ink", tall: true },
-  { label: "Business", gradient: "from-beige-dark via-beige to-paper-soft", tall: false },
-  { label: "Hochzeit", gradient: "from-green via-green-dark to-ink", tall: false },
-  { label: "Produkt", gradient: "from-paper-soft via-beige to-beige-dark", tall: true },
-  { label: "Event", gradient: "from-ink via-ink-soft to-green-dark", tall: false },
-  { label: "Editorial", gradient: "from-beige via-green-light to-green", tall: false },
+  { label: "Portrait", gradient: "from-beige-dark via-beige to-paper-soft", tall: true },
+  { label: "Business", gradient: "from-paper-soft via-white to-beige", tall: false },
+  { label: "Hochzeit", gradient: "from-beige via-green-light/40 to-paper-soft", tall: false },
+  { label: "Produkt", gradient: "from-white via-paper-soft to-beige", tall: true },
+  { label: "Event", gradient: "from-beige-dark/70 via-beige to-white", tall: false },
+  { label: "Editorial", gradient: "from-beige via-white to-green-light/30", tall: false },
 ];
 
 export function GalleryPreview() {
@@ -39,13 +39,13 @@ export function GalleryPreview() {
             <motion.div
               key={tile.label}
               variants={staggerItem}
-              className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${tile.gradient} ${
+              className={`group relative overflow-hidden rounded-[1.75rem] border border-beige-dark/20 bg-gradient-to-br ${tile.gradient} ${
                 tile.tall ? "row-span-2 aspect-[3/4]" : "aspect-square"
               }`}
             >
               <div className="bg-grain absolute inset-0 opacity-70" />
               <div className="absolute inset-0 flex items-end p-5">
-                <span className="rounded-full bg-black/30 px-3 py-1 text-xs uppercase tracking-[0.15em] text-white backdrop-blur-sm transition-transform duration-300 group-hover:translate-y-[-4px]">
+                <span className="rounded-full bg-ink/80 px-3 py-1 text-xs uppercase tracking-[0.15em] text-white backdrop-blur-sm transition-transform duration-300 group-hover:translate-y-[-4px]">
                   {tile.label}
                 </span>
               </div>

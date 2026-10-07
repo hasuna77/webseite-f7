@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowUpRight, Car, MapPin } from "lucide-react";
-import { Container, Eyebrow } from "@/components/ui/Container";
+import { Container } from "@/components/ui/Container";
 import { LinkButton } from "@/components/ui/Button";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
+import { PageHero } from "@/components/sections/PageHero";
 import { CTASection } from "@/components/sections/CTASection";
 import { business, serviceAreas, services } from "@/lib/content/business";
 import { breadcrumbJsonLd, faqJsonLd } from "@/lib/seo/jsonld";
@@ -89,23 +90,16 @@ export default async function StandortDetailPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(localFaq)) }}
       />
 
-      <section className="bg-ink pb-20 pt-36 text-white lg:pt-44">
-        <Container className="max-w-3xl">
-          <Eyebrow>Standort</Eyebrow>
-          <h1 className="mt-4 font-display text-5xl sm:text-6xl">
-            Fotograf in {area.city}
-          </h1>
-          <p className="mt-6 text-lg text-white/70">{area.intro}</p>
-          <div className="mt-8 flex flex-wrap items-center gap-6">
-            <LinkButton href="/kontakt">Shooting in {area.city} anfragen</LinkButton>
-            {area.distanceFromStudio && (
-              <span className="flex items-center gap-2 text-sm text-white/60">
-                <Car className="h-4 w-4" /> {area.distanceFromStudio} ab {business.address.city}
-              </span>
-            )}
-          </div>
-        </Container>
-      </section>
+      <PageHero eyebrow="Standort" title={`Fotograf in ${area.city}`} description={area.intro}>
+        <div className="flex flex-wrap items-center gap-6">
+          <LinkButton href="/kontakt">Shooting in {area.city} anfragen</LinkButton>
+          {area.distanceFromStudio && (
+            <span className="flex items-center gap-2 text-sm text-ink-soft">
+              <Car className="h-4 w-4" /> {area.distanceFromStudio} ab {business.address.city}
+            </span>
+          )}
+        </div>
+      </PageHero>
 
       <section className="bg-paper py-20 lg:py-28">
         <Container className="grid gap-12 lg:grid-cols-2">
@@ -128,7 +122,7 @@ export default async function StandortDetailPage({
                 <Link
                   key={service.slug}
                   href={`/leistungen/${service.slug}`}
-                  className="group flex items-center justify-between rounded-xl border border-beige-dark/30 bg-paper-soft px-5 py-3.5 text-sm text-ink-soft transition-colors hover:border-green/40 hover:text-green"
+                  className="group flex items-center justify-between rounded-2xl border border-beige-dark/30 bg-paper-soft px-5 py-3.5 text-sm text-ink-soft transition-colors hover:border-green/40 hover:text-green"
                 >
                   {service.title}
                   <ArrowUpRight className="h-4 w-4 opacity-40 transition-opacity group-hover:opacity-100" />

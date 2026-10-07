@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Container, Eyebrow } from "@/components/ui/Container";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
+import { PageHero } from "@/components/sections/PageHero";
 import { CTASection } from "@/components/sections/CTASection";
 import { ValuesGrid } from "@/components/sections/ValuesGrid";
 import { business } from "@/lib/content/business";
@@ -14,21 +15,17 @@ export const metadata: Metadata = {
 export default function UeberUnsPage() {
   return (
     <>
-      <section className="bg-ink pb-20 pt-36 text-white lg:pt-44">
-        <Container className="max-w-3xl">
-          <Eyebrow>Über uns</Eyebrow>
-          <h1 className="mt-4 font-display text-5xl sm:text-6xl">
-            Menschen hinter der Kamera.
-          </h1>
-          <p className="mt-6 text-lg text-white/70">{business.description}</p>
-        </Container>
-      </section>
+      <PageHero
+        eyebrow="Über uns"
+        title="Menschen hinter der Kamera."
+        description={business.description}
+      />
 
       <section className="bg-paper py-20 lg:py-28">
         <Container className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <ScrollReveal>
-            <div className="aspect-[4/5] overflow-hidden rounded-[2rem] bg-gradient-to-br from-beige via-green-light/40 to-ink">
-              <div className="bg-grain h-full w-full opacity-60" />
+            <div className="aspect-[4/5] overflow-hidden rounded-[2rem] border border-beige-dark/30 bg-gradient-to-br from-beige via-paper-soft to-white">
+              <div className="bg-grain relative h-full w-full opacity-50" />
             </div>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>

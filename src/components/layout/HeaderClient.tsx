@@ -34,41 +34,34 @@ export function HeaderClient({
   }
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 16);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const solid = scrolled || open;
-
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        solid
-          ? "bg-paper/95 shadow-[0_1px_0_0_rgba(18,18,15,0.08)] backdrop-blur-md"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
-        <Link
-          href="/"
-          className={`flex items-center gap-2 font-display text-lg tracking-wide transition-colors ${
-            solid ? "text-ink" : "text-white"
-          }`}
-        >
+    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-5">
+      <div
+        className={`mx-auto flex max-w-6xl items-center justify-between rounded-full border transition-all duration-500 ${
+          scrolled || open
+            ? "border-beige-dark/40 bg-paper/90 px-5 py-2.5 shadow-soft backdrop-blur-md"
+            : "border-transparent bg-paper/70 px-6 py-3.5 backdrop-blur-sm"
+        }`}
+      >
+        <Link href="/" className="flex items-center gap-2 font-display text-lg text-ink">
           <Camera className="h-5 w-5 text-green" strokeWidth={1.5} />
           {businessName}
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-7 lg:flex">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm uppercase tracking-[0.08em] transition-colors hover:text-green ${
-                solid ? "text-ink-soft" : "text-white/90"
-              } ${pathname === link.href ? "text-green" : ""}`}
+              className={`text-sm tracking-wide text-ink-soft transition-colors hover:text-green ${
+                pathname === link.href ? "text-green" : ""
+              }`}
             >
               {link.label}
             </Link>
@@ -80,18 +73,14 @@ export function HeaderClient({
             <>
               <Link
                 href="/dashboard"
-                className={`text-sm uppercase tracking-[0.08em] transition-colors hover:text-green ${
-                  solid ? "text-ink-soft" : "text-white/90"
-                }`}
+                className="text-sm tracking-wide text-ink-soft transition-colors hover:text-green"
               >
                 {session.name.split(" ")[0]}
               </Link>
               <form action={logoutAction}>
                 <button
                   type="submit"
-                  className={`text-sm uppercase tracking-[0.08em] transition-colors hover:text-green ${
-                    solid ? "text-ink-soft" : "text-white/90"
-                  }`}
+                  className="text-sm tracking-wide text-ink-soft transition-colors hover:text-green"
                 >
                   Abmelden
                 </button>
@@ -100,9 +89,7 @@ export function HeaderClient({
           ) : (
             <Link
               href="/login"
-              className={`text-sm uppercase tracking-[0.08em] transition-colors hover:text-green ${
-                solid ? "text-ink-soft" : "text-white/90"
-              }`}
+              className="text-sm tracking-wide text-ink-soft transition-colors hover:text-green"
             >
               Anmelden
             </Link>
@@ -119,25 +106,21 @@ export function HeaderClient({
           type="button"
           aria-label="Menü öffnen"
           onClick={() => setOpen((v) => !v)}
-          className={`lg:hidden ${solid ? "text-ink" : "text-white"}`}
+          className="text-ink lg:hidden"
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
       {open && (
-        <div className="border-t border-beige-dark/40 bg-paper px-6 pb-8 pt-4 lg:hidden">
+        <div className="mx-auto mt-2 max-w-6xl rounded-[1.75rem] border border-beige-dark/40 bg-paper px-6 pb-8 pt-4 shadow-soft lg:hidden">
           <nav className="flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-base text-ink-soft hover:text-green"
-              >
+              <Link key={link.href} href={link.href} className="text-base text-ink-soft hover:text-green">
                 {link.label}
               </Link>
             ))}
-            <div className="mt-2 flex flex-col gap-3 border-t border-beige-dark/40 pt-4">
+            <div className="mt-2 flex flex-col gap-3 border-t border-beige-dark/30 pt-4">
               {session ? (
                 <>
                   <Link href="/dashboard" className="text-base text-ink-soft hover:text-green">

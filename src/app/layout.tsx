@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Bodoni_Moda, Work_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -7,15 +7,15 @@ import { ChatWidget } from "@/components/chat/ChatWidget";
 import { business, seoKeywords } from "@/lib/content/business";
 import { localBusinessJsonLd } from "@/lib/seo/jsonld";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const bodoni = Bodoni_Moda({
+  variable: "--font-bodoni",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const workSans = Work_Sans({
+  variable: "--font-work-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="de" className={`${fraunces.variable} ${inter.variable}`}>
+    <html lang="de" className={`${bodoni.variable} ${workSans.variable}`}>
       <body className="flex min-h-screen flex-col bg-paper text-ink antialiased">
         <script
           type="application/ld+json"

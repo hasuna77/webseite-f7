@@ -28,21 +28,23 @@ const STEPS = [
 
 export function Process() {
   return (
-    <section className="bg-ink py-24 text-white lg:py-32">
+    <section className="bg-paper py-24 lg:py-32">
       <Container>
         <ScrollReveal>
           <Eyebrow>Ablauf</Eyebrow>
-          <h2 className="mt-4 max-w-xl font-display text-4xl sm:text-5xl">
+          <h2 className="mt-4 max-w-xl font-display text-4xl text-ink sm:text-5xl">
             So entsteht dein Shooting.
           </h2>
         </ScrollReveal>
 
-        <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {STEPS.map((step, i) => (
             <ScrollReveal key={step.number} delay={i * 0.1}>
-              <span className="font-display text-sm text-green-light">{step.number}</span>
-              <h3 className="mt-3 font-display text-xl">{step.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-white/60">{step.text}</p>
+              <div className="h-full rounded-[1.75rem] border border-beige-dark/30 bg-paper-soft p-7">
+                <span className="font-display text-sm text-green">{step.number}</span>
+                <h3 className="mt-3 font-display text-xl text-ink">{step.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-soft">{step.text}</p>
+              </div>
             </ScrollReveal>
           ))}
         </div>

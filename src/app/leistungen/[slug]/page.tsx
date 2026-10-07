@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Check } from "lucide-react";
-import { Container, Eyebrow } from "@/components/ui/Container";
+import { Container } from "@/components/ui/Container";
 import { LinkButton } from "@/components/ui/Button";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
+import { PageHero } from "@/components/sections/PageHero";
 import { CTASection } from "@/components/sections/CTASection";
 import { business, services } from "@/lib/content/business";
 import { breadcrumbJsonLd, serviceJsonLd } from "@/lib/seo/jsonld";
@@ -66,22 +67,17 @@ export default async function ServiceDetailPage({
         }}
       />
 
-      <section className="bg-ink pb-20 pt-36 text-white lg:pt-44">
-        <Container className="max-w-3xl">
-          <Eyebrow>{service.shortTitle}</Eyebrow>
-          <h1 className="mt-4 font-display text-5xl sm:text-6xl">{service.title}</h1>
-          <p className="mt-6 text-lg text-white/70">{service.description}</p>
-          <div className="mt-8 flex flex-wrap items-center gap-6">
-            <LinkButton href="/kontakt">Termin anfragen</LinkButton>
-            <span className="text-sm text-white/60">
-              ab <strong className="text-white">{service.priceFrom}€</strong> · ca.{" "}
-              {service.durationMinutes >= 60
-                ? `${Math.round(service.durationMinutes / 60)} Std.`
-                : `${service.durationMinutes} Min.`}
-            </span>
-          </div>
-        </Container>
-      </section>
+      <PageHero eyebrow={service.shortTitle} title={service.title} description={service.description}>
+        <div className="flex flex-wrap items-center gap-6">
+          <LinkButton href="/kontakt">Termin anfragen</LinkButton>
+          <span className="text-sm text-ink-soft">
+            ab <strong className="text-ink">{service.priceFrom}€</strong> · ca.{" "}
+            {service.durationMinutes >= 60
+              ? `${Math.round(service.durationMinutes / 60)} Std.`
+              : `${service.durationMinutes} Min.`}
+          </span>
+        </div>
+      </PageHero>
 
       <section className="bg-paper py-20 lg:py-28">
         <Container className="grid gap-12 lg:grid-cols-[1fr_1px_1fr]">

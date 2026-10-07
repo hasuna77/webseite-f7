@@ -3,6 +3,8 @@ import { Hero } from "@/components/sections/Hero";
 import { Stats } from "@/components/sections/Stats";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { Process } from "@/components/sections/Process";
+import { ScrollImageReveal } from "@/components/motion/ScrollImageReveal";
+import { ScrollScrubVideo } from "@/components/motion/ScrollScrubVideo";
 import { GalleryPreview } from "@/components/sections/GalleryPreview";
 import { LocalSeoTeaser } from "@/components/sections/LocalSeoTeaser";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -31,8 +33,10 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(FAQ_ITEMS)) }}
       />
       <Hero />
+      <ScrollImageReveal eyebrow="Unser Ansatz" title="Jeder Moment verdient Raum, sich zu entfalten." />
       <Stats />
       <ServicesGrid />
+      <ScrollScrubVideo />
       <Process />
       <GalleryPreview />
       <LocalSeoTeaser />

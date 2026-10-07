@@ -27,7 +27,7 @@ export function LocalSeoTeaser() {
             <motion.div key={area.slug} variants={staggerItem}>
               <Link
                 href={`/standorte/${area.slug}`}
-                className="group flex items-center justify-between gap-2 rounded-xl border border-beige-dark/30 bg-paper-soft px-4 py-3 text-sm text-ink-soft transition-colors hover:border-green hover:text-green"
+                className="group flex items-center justify-between gap-2 rounded-2xl border border-beige-dark/30 bg-paper-soft px-4 py-3 text-sm text-ink-soft transition-colors hover:border-green hover:text-green"
               >
                 {area.city}
                 <MapPin className="h-4 w-4 opacity-40 transition-opacity group-hover:opacity-100" />

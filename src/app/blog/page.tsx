@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { Container, Eyebrow } from "@/components/ui/Container";
+import { Container } from "@/components/ui/Container";
+import { PageHero } from "@/components/sections/PageHero";
 import { business } from "@/lib/content/business";
 import { posts } from "@/lib/content/posts";
 
@@ -16,14 +17,7 @@ export default function BlogIndexPage() {
 
   return (
     <>
-      <section className="bg-ink pb-20 pt-36 text-white lg:pt-44">
-        <Container>
-          <Eyebrow>Journal</Eyebrow>
-          <h1 className="mt-4 max-w-2xl font-display text-5xl sm:text-6xl">
-            Gedanken, Tipps & Hintergründe.
-          </h1>
-        </Container>
-      </section>
+      <PageHero eyebrow="Journal" title="Gedanken, Tipps & Hintergründe." />
 
       <section className="bg-paper py-20 lg:py-28">
         <Container className="grid gap-6 lg:grid-cols-2">
