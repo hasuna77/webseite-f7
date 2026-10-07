@@ -1,4 +1,4 @@
-# Lichtraum Fotostudio – Website
+# F7 Studio – Website
 
 Elegante, SEO-optimierte Website für ein Fotostudio in NRW, gebaut mit
 Next.js 16 (App Router), Tailwind CSS v4 und Framer Motion. Enthält ein
@@ -56,7 +56,6 @@ Stagger-Animationen, genutzt auf allen Marketing-Seiten.
 - Metadata API pro Seite (Title, Description, Canonical, Open Graph)
 - `src/app/sitemap.ts`, `src/app/robots.ts`
 - JSON-LD: LocalBusiness, Service, FAQPage, BreadcrumbList, Article (`src/lib/seo/jsonld.ts`)
-- Programmatische Local-SEO-Seiten `/standorte/[city]` für jede NRW-Stadt in `serviceAreas`
 - Dynamisch generiertes Open-Graph-Bild (`src/app/opengraph-image.tsx`)
 
 ### KI-Chat-Support

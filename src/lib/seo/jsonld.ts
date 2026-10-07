@@ -1,4 +1,4 @@
-import { business, serviceAreas, services } from "@/lib/content/business";
+import { business, services } from "@/lib/content/business";
 
 export function localBusinessJsonLd() {
   return {
@@ -34,10 +34,10 @@ export function localBusinessJsonLd() {
       opens: entry.hours.split("–")[0]?.trim(),
       closes: entry.hours.split("–")[1]?.trim(),
     })),
-    areaServed: serviceAreas.map((area) => ({
+    areaServed: {
       "@type": "City",
-      name: area.city,
-    })),
+      name: business.address.city,
+    },
     sameAs: Object.values(business.social),
     hasOfferCatalog: {
       "@type": "OfferCatalog",

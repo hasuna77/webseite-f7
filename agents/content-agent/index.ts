@@ -16,7 +16,7 @@
 import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { askClaudeForJson } from "../shared/anthropic";
-import { business, services, serviceAreas, posts, type Post } from "../shared/context";
+import { business, services, posts, type Post } from "../shared/context";
 
 type Args = { count: number; topic?: string; apply: boolean };
 
@@ -35,7 +35,7 @@ function buildSystemPrompt(): string {
   return `Du bist der Content-Stratege von "${business.name}", einem Fotostudio in ${business.address.city} (NRW). Du schreibst deutschsprachige, hilfreiche, konkrete Ratgeber-Artikel fürs Studio-Journal – kein Marketing-Geschwafel, sondern echte Tipps mit lokalem NRW-Bezug.
 
 Leistungen: ${services.map((s) => s.title).join(", ")}.
-Einzugsgebiet: ${serviceAreas.map((a) => a.city).join(", ")}.
+Einzugsgebiet: ${business.address.city} und Umgebung.
 
 Antworte AUSSCHLIESSLICH mit einem JSON-Array. Jedes Element entspricht exakt diesem TypeScript-Typ:
 

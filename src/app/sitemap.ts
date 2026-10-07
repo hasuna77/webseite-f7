@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { business, serviceAreas, services } from "@/lib/content/business";
+import { business, services } from "@/lib/content/business";
 import { posts } from "@/lib/content/posts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -10,7 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${business.domain}/leistungen`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${business.domain}/galerie`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${business.domain}/ueber-uns`, lastModified: now, changeFrequency: "yearly", priority: 0.6 },
-    { url: `${business.domain}/standorte`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${business.domain}/kontakt`, lastModified: now, changeFrequency: "yearly", priority: 0.8 },
     { url: `${business.domain}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: `${business.domain}/impressum`, lastModified: now, changeFrequency: "yearly", priority: 0.1 },
@@ -24,13 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const areaRoutes: MetadataRoute.Sitemap = serviceAreas.map((area) => ({
-    url: `${business.domain}/standorte/${area.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.75,
-  }));
-
   const postRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${business.domain}/blog/${post.slug}`,
     lastModified: new Date(post.updatedAt ?? post.publishedAt),
@@ -38,5 +30,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...areaRoutes, ...postRoutes];
+  return [...staticRoutes, ...serviceRoutes, ...postRoutes];
 }

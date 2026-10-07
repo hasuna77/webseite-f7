@@ -21,7 +21,7 @@ Geschäftsdaten:
 - Telefon: ${business.phoneDisplay}
 - E-Mail: ${business.email}
 - Öffnungszeiten: ${business.openingHours.map((o) => `${o.days} ${o.hours}`).join(", ")}
-- Einzugsgebiet: ganz Nordrhein-Westfalen (Düsseldorf, Köln, Essen, Dortmund, Duisburg, Bochum, Wuppertal, Bonn, Münster, Bielefeld)
+- Einzugsgebiet: Düsseldorf und Umgebung
 
 Leistungen:
 ${serviceList}

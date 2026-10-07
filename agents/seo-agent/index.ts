@@ -8,7 +8,7 @@
  *
  * Nutzung:
  *   npx tsx agents/seo-agent/index.ts --url http://localhost:3000
- *   npx tsx agents/seo-agent/index.ts --url https://www.lichtraum-fotostudio.de
+ *   npx tsx agents/seo-agent/index.ts --url https://www.f7studio.de
  *
  * Voraussetzung: ANTHROPIC_API_KEY in der Umgebung. Ohne Key wird nur der
  * technische Rohbefund ausgegeben (kein Claude-Report).

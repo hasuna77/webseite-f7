@@ -1,16 +1,16 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Camera, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { logoutAction } from "@/actions/auth";
 import type { SessionPayload } from "@/lib/auth/jwt";
 
 const NAV_LINKS = [
   { href: "/leistungen", label: "Leistungen" },
   { href: "/galerie", label: "Galerie" },
-  { href: "/standorte", label: "Standorte" },
   { href: "/ueber-uns", label: "Über uns" },
   { href: "/blog", label: "Journal" },
   { href: "/kontakt", label: "Kontakt" },
@@ -49,9 +49,15 @@ export function HeaderClient({
             : "border-transparent bg-paper/70 px-6 py-3.5 backdrop-blur-sm"
         }`}
       >
-        <Link href="/" className="flex items-center gap-2 font-display text-lg text-ink">
-          <Camera className="h-5 w-5 text-green" strokeWidth={1.5} />
-          {businessName}
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt={businessName}
+            width={1000}
+            height={362}
+            priority
+            className="h-8 w-auto sm:h-9"
+          />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">

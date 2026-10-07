@@ -6,9 +6,9 @@ export const FAQ_ITEMS = [
     answer: `Achte auf Portfolio-Stil, Referenzen und persönliches Kennenlernen vor dem Shooting. Wir bieten dir ein kurzes, unverbindliches Vorgespräch – telefonisch oder bei uns in ${business.address.city}.`,
   },
   {
-    question: "Kommt ihr auch außerhalb von Düsseldorf vorbei?",
+    question: "Kommt ihr auch außerhalb des Studios vorbei?",
     answer:
-      "Ja. Wir fotografieren regelmäßig in Köln, Essen, Dortmund, Duisburg, Bochum, Wuppertal, Bonn, Münster und Bielefeld sowie in weiteren Städten in Nordrhein-Westfalen.",
+      "Ja, nach Absprache fotografieren wir auch an deinem Wunschort – in deinem Büro, zu Hause oder an einer passenden Location in und um Düsseldorf.",
   },
   {
     question: "Wie viel kostet ein Fotoshooting?",

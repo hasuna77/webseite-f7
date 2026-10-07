@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Camera } from "lucide-react";
-import { business, serviceAreas } from "@/lib/content/business";
+import Image from "next/image";
+import { business } from "@/lib/content/business";
 import { SocialBadge } from "@/components/ui/SocialIcons";
 
 export function Footer() {
@@ -9,11 +9,16 @@ export function Footer() {
   return (
     <footer className="bg-ink text-white/80">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2 font-display text-xl text-white">
-              <Camera className="h-5 w-5 text-green-light" strokeWidth={1.5} />
-              {business.name}
+            <Link href="/" className="inline-flex rounded-2xl bg-paper px-4 py-2.5">
+              <Image
+                src="/logo.png"
+                alt={business.name}
+                width={1000}
+                height={362}
+                className="h-7 w-auto"
+              />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
               {business.shortDescription}
@@ -59,21 +64,6 @@ export function Footer() {
               <li><Link href="/leistungen/hochzeitsfotografie" className="hover:text-green-light">Hochzeitsfotografie</Link></li>
               <li><Link href="/leistungen/produktfotografie" className="hover:text-green-light">Produktfotografie</Link></li>
               <li><Link href="/leistungen/eventfotografie" className="hover:text-green-light">Eventfotografie</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-display text-sm uppercase tracking-[0.15em] text-white/50">
-              Fotograf in NRW
-            </h3>
-            <ul className="mt-4 grid grid-cols-2 gap-2 text-sm">
-              {serviceAreas.slice(0, 8).map((area) => (
-                <li key={area.slug}>
-                  <Link href={`/standorte/${area.slug}`} className="hover:text-green-light">
-                    {area.city}
-                  </Link>
-                </li>
-              ))}
             </ul>
           </div>
 

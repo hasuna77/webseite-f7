@@ -5,19 +5,19 @@
  * "Fotostudio NRW", "Fotograf <Stadt>") MÜSSEN Name, Adresse, Telefonnummer
  * (NAP) exakt mit deinem Google-Unternehmensprofil übereinstimmen. Ersetze
  * die Werte hier – sie werden automatisch in Metadaten, JSON-LD (strukturierte
- * Daten), Footer, Kontaktseite und den Standort-Seiten verwendet.
+ * Daten), Footer und Kontaktseite verwendet.
  */
 
 export const business = {
-  name: "Lichtraum Fotostudio",
-  legalName: "Lichtraum Fotostudio GmbH",
+  name: "F7 Studio",
+  legalName: "F7 Studio",
   tagline: "Fotografie mit Haltung.",
   shortDescription:
     "Hochwertige Portrait-, Business-, Hochzeits- und Produktfotografie in Düsseldorf – und in ganz Nordrhein-Westfalen.",
   description:
-    "Lichtraum Fotostudio ist ein inhabergeführtes Fotostudio in Düsseldorf. Wir fotografieren Menschen, Marken und Momente mit einem klaren, zeitlosen Stil – für Kund:innen in Düsseldorf, Köln, Essen, Dortmund und ganz Nordrhein-Westfalen.",
+    "F7 Studio ist ein inhabergeführtes Fotostudio in Düsseldorf. Wir fotografieren Menschen, Marken und Momente mit einem klaren, zeitlosen Stil.",
   founded: "2016",
-  email: "studio@lichtraum-fotostudio.de",
+  email: "studio@f7studio.de",
   phone: "+49 211 1234 5678",
   phoneDisplay: "0211 1234 5678",
   whatsapp: "+4921112345678",
@@ -40,104 +40,15 @@ export const business = {
   ],
   priceRange: "€€–€€€",
   social: {
-    instagram: "https://instagram.com/lichtraum.fotostudio",
-    facebook: "https://facebook.com/lichtraumfotostudio",
-    tiktok: "https://tiktok.com/@lichtraum.fotostudio",
-    pinterest: "https://pinterest.com/lichtraumfotostudio",
-    linkedin: "https://linkedin.com/company/lichtraum-fotostudio",
-    googleBusiness: "https://g.page/lichtraum-fotostudio",
+    instagram: "https://instagram.com/f7studio",
+    facebook: "https://facebook.com/f7studio",
+    tiktok: "https://tiktok.com/@f7studio",
+    pinterest: "https://pinterest.com/f7studio",
+    linkedin: "https://linkedin.com/company/f7studio",
+    googleBusiness: "https://g.page/f7studio",
   },
-  domain: "https://www.lichtraum-fotostudio.de",
+  domain: "https://www.f7studio.de",
 } as const;
-
-export type ServiceArea = {
-  slug: string;
-  city: string;
-  region: string;
-  distanceFromStudio?: string;
-  intro: string;
-};
-
-/**
- * Städte in NRW, für die programmatische Local-SEO-Seiten unter
- * /standorte/[city] erzeugt werden (Thema: "Fotograf in <Stadt>").
- * Liste bei Bedarf erweitern.
- */
-export const serviceAreas: ServiceArea[] = [
-  {
-    slug: "duesseldorf",
-    city: "Düsseldorf",
-    region: "Nordrhein-Westfalen",
-    intro:
-      "Unser Hauptstudio liegt mitten in Düsseldorf – kurze Wege, flexible Termine, auch am Wochenende.",
-  },
-  {
-    slug: "koeln",
-    city: "Köln",
-    region: "Nordrhein-Westfalen",
-    distanceFromStudio: "ca. 40 km",
-    intro:
-      "Für Shootings in Köln kommen wir mit vollem Equipment zu dir ins Studio, Büro oder an deinen Wunschort.",
-  },
-  {
-    slug: "essen",
-    city: "Essen",
-    region: "Nordrhein-Westfalen",
-    distanceFromStudio: "ca. 35 km",
-    intro:
-      "Business-, Bewerbungs- und Hochzeitsfotografie für Kund:innen aus Essen und dem Ruhrgebiet.",
-  },
-  {
-    slug: "dortmund",
-    city: "Dortmund",
-    region: "Nordrhein-Westfalen",
-    distanceFromStudio: "ca. 65 km",
-    intro:
-      "Professionelle Fotografie für Unternehmen und Privatkund:innen in Dortmund.",
-  },
-  {
-    slug: "duisburg",
-    city: "Duisburg",
-    region: "Nordrhein-Westfalen",
-    distanceFromStudio: "ca. 30 km",
-    intro: "Portrait- und Produktfotografie für Kund:innen in Duisburg.",
-  },
-  {
-    slug: "bochum",
-    city: "Bochum",
-    region: "Nordrhein-Westfalen",
-    distanceFromStudio: "ca. 50 km",
-    intro: "Fotoshootings und Business-Portraits für Bochum und Umgebung.",
-  },
-  {
-    slug: "wuppertal",
-    city: "Wuppertal",
-    region: "Nordrhein-Westfalen",
-    distanceFromStudio: "ca. 30 km",
-    intro: "Hochzeits- und Portraitfotografie für Wuppertal und das Bergische Land.",
-  },
-  {
-    slug: "bonn",
-    city: "Bonn",
-    region: "Nordrhein-Westfalen",
-    distanceFromStudio: "ca. 60 km",
-    intro: "Elegante Business- und Eventfotografie für Bonn und die Region.",
-  },
-  {
-    slug: "muenster",
-    city: "Münster",
-    region: "Nordrhein-Westfalen",
-    distanceFromStudio: "ca. 110 km",
-    intro: "Fotografie für besondere Anlässe in Münster – auf Anfrage auch vor Ort.",
-  },
-  {
-    slug: "bielefeld",
-    city: "Bielefeld",
-    region: "Nordrhein-Westfalen",
-    distanceFromStudio: "ca. 140 km",
-    intro: "Shootings in Bielefeld nach Vereinbarung, inklusive mobilem Studio-Equipment.",
-  },
-];
 
 export type Service = {
   slug: string;
@@ -202,7 +113,7 @@ export const services: Service[] = [
       "Online-Galerie für Gäste",
       "Premium-Fotobuch optional",
     ],
-    keywords: ["Hochzeitsfotograf NRW", "Hochzeitsfotos Düsseldorf", "Hochzeitsfotograf Köln"],
+    keywords: ["Hochzeitsfotograf NRW", "Hochzeitsfotos Düsseldorf"],
   },
   {
     slug: "produktfotografie",

@@ -9,7 +9,7 @@ type Message = { role: "user" | "assistant"; content: string };
 const GREETING: Message = {
   role: "assistant",
   content:
-    "Hallo! Ich bin der digitale Assistent von Lichtraum Fotostudio. Frag mich gern nach Leistungen, Preisen oder freien Terminen.",
+    "Hallo! Ich bin der digitale Assistent von F7 Studio. Frag mich gern nach Leistungen, Preisen oder freien Terminen.",
 };
 
 export function ChatWidget() {

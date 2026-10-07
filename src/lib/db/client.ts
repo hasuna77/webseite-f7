@@ -52,7 +52,7 @@ function createConnection(): DatabaseSync {
   //    (Vercel, AWS Lambda) beschreibbar, bleibt aber nur für die
   //    Lebensdauer der Instanz erhalten.
   try {
-    const db = openAt(path.join(os.tmpdir(), "lichtraum-fotostudio", "app.db"));
+    const db = openAt(path.join(os.tmpdir(), "f7studio", "app.db"));
     console.warn(
       "[db] Projektverzeichnis nicht beschreibbar – nutze " +
         "temporäres Verzeichnis. Daten überleben keinen Kaltstart/Redeploy. " +

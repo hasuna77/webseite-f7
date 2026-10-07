@@ -21,13 +21,13 @@ const QUOTES = [
     quote:
       "Platzhalter-Zitat: Unser gesamtes Team hat in unter zwei Stunden einheitliche Business-Fotos bekommen. Reibungslos organisiert.",
     name: "T. R.",
-    context: "Teamfotos, Köln",
+    context: "Teamfotos, Düsseldorf",
   },
   {
     quote:
       "Platzhalter-Zitat: Die Hochzeitsfotos zeigen genau die Emotionen, die wir in Erinnerung behalten wollten – ganz ohne gestellte Posen.",
     name: "S. & J.",
-    context: "Hochzeit, Essen",
+    context: "Hochzeit, Düsseldorf",
   },
 ];
 

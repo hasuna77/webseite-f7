@@ -6,7 +6,6 @@ import { Process } from "@/components/sections/Process";
 import { ScrollImageReveal } from "@/components/motion/ScrollImageReveal";
 import { ScrollScrubVideo } from "@/components/motion/ScrollScrubVideo";
 import { GalleryPreview } from "@/components/sections/GalleryPreview";
-import { LocalSeoTeaser } from "@/components/sections/LocalSeoTeaser";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
@@ -39,7 +38,6 @@ export default function HomePage() {
       <ScrollScrubVideo />
       <Process />
       <GalleryPreview />
-      <LocalSeoTeaser />
       <Testimonials />
       <FAQSection />
       <CTASection />
