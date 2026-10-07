@@ -14,16 +14,17 @@ import { Eyebrow } from "@/components/ui/Container";
  */
 export function ScrollScrubVideo({
   src = "/videos/showreel.mp4",
+  poster = "/videos/showreel-poster.jpg",
   eyebrow = "Showreel",
   title = "In Bewegung.",
 }: {
   src?: string;
+  poster?: string;
   eyebrow?: string;
   title?: string;
 }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [ready, setReady] = useState(false);
   const [errored, setErrored] = useState(false);
 
   const { scrollYProgress } = useScroll({
@@ -31,9 +32,12 @@ export function ScrollScrubVideo({
     offset: ["start start", "end end"],
   });
 
+  // Kein "ready"-Flag über einen Event-Handler: video.duration direkt am
+  // Element abzufragen ist robuster, da onLoadedMetadata je nach
+  // Hydration-Timing verpasst werden kann.
   useMotionValueEvent(scrollYProgress, "change", (progress) => {
     const video = videoRef.current;
-    if (!video || !ready || !Number.isFinite(video.duration)) return;
+    if (!video || !Number.isFinite(video.duration) || video.duration <= 0) return;
     const target = Math.min(video.duration, Math.max(0, progress * video.duration));
     if (Math.abs(video.currentTime - target) > 0.05) {
       video.currentTime = target;
@@ -52,14 +56,16 @@ export function ScrollScrubVideo({
           {!errored ? (
             <video
               ref={videoRef}
-              src={src}
+              poster={poster}
               muted
               playsInline
               preload="auto"
-              onLoadedMetadata={() => setReady(true)}
               onError={() => setErrored(true)}
               className="h-full w-full object-cover"
-            />
+            >
+              <source src={src.replace(/\.mp4$/, ".webm")} type="video/webm" />
+              <source src={src} type="video/mp4" />
+            </video>
           ) : (
             <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-beige via-paper-soft to-white px-10 text-center">
               <span className="text-xs font-medium uppercase tracking-[0.25em] text-green">
