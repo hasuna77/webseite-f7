@@ -32,7 +32,12 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(FAQ_ITEMS)) }}
       />
       <Hero />
-      <ScrollImageReveal eyebrow="Unser Ansatz" title="Jeder Moment verdient Raum, sich zu entfalten." />
+      <ScrollImageReveal
+        eyebrow="Projektarbeit"
+        title="Ideen, denen wir eine Form geben."
+        imageSrc="/gallery/havex.jpg"
+        imageAlt="HAVEX Markendesign von F7 Studio"
+      />
       <Stats />
       <ServicesGrid />
       <ScrollScrubVideo />

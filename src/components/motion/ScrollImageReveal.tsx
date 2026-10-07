@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, type ReactNode } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 /**
@@ -14,11 +15,15 @@ export function ScrollImageReveal({
   title,
   className = "",
   children,
+  imageSrc,
+  imageAlt,
 }: {
   eyebrow: string;
   title: ReactNode;
   className?: string;
   children?: ReactNode;
+  imageSrc?: string;
+  imageAlt?: string;
 }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -36,9 +41,22 @@ export function ScrollImageReveal({
       <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden px-4">
         <motion.div
           style={{ scale, borderRadius: radius }}
-          className="relative h-[72vh] w-full max-w-6xl overflow-hidden border border-beige-dark/30 bg-gradient-to-br from-beige via-paper-soft to-white shadow-soft"
+          className={`relative h-[72vh] w-full max-w-6xl overflow-hidden border border-beige-dark/30 shadow-soft ${
+            imageSrc ? "bg-ink" : "bg-gradient-to-br from-beige via-paper-soft to-white"
+          }`}
         >
-          <div className="bg-grain absolute inset-0 opacity-50" />
+          {imageSrc ? (
+            <Image
+              src={imageSrc}
+              alt={imageAlt ?? ""}
+              fill
+              sizes="(min-width: 1536px) 1152px, 90vw"
+              className="object-cover"
+              priority={false}
+            />
+          ) : (
+            <div className="bg-grain absolute inset-0 opacity-50" />
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-ink/15 via-transparent to-transparent" />
           {children}
         </motion.div>
