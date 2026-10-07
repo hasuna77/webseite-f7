@@ -1,7 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, Aperture, Briefcase, Heart, Package, PartyPopper } from "lucide-react";
+import {
+  ArrowUpRight,
+  Aperture,
+  Briefcase,
+  Clapperboard,
+  Heart,
+  Package,
+  PartyPopper,
+} from "lucide-react";
 import { Container, Eyebrow } from "@/components/ui/Container";
 import { ScrollReveal, ScrollStagger, staggerItem } from "@/components/motion/ScrollReveal";
 import { services } from "@/lib/content/business";
@@ -13,6 +21,7 @@ const ICONS: Record<string, typeof Aperture> = {
   hochzeitsfotografie: Heart,
   produktfotografie: Package,
   eventfotografie: PartyPopper,
+  videografie: Clapperboard,
 };
 
 export function ServicesGrid() {

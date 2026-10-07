@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { business } from "@/lib/content/business";
+import { business, services } from "@/lib/content/business";
 import { SocialBadge } from "@/components/ui/SocialIcons";
 
 export function Footer() {
@@ -59,11 +59,13 @@ export function Footer() {
               Leistungen
             </h3>
             <ul className="mt-4 space-y-2 text-sm">
-              <li><Link href="/leistungen/portraitfotografie" className="hover:text-green-light">Portraitfotografie</Link></li>
-              <li><Link href="/leistungen/businessfotografie" className="hover:text-green-light">Business-Fotos</Link></li>
-              <li><Link href="/leistungen/hochzeitsfotografie" className="hover:text-green-light">Hochzeitsfotografie</Link></li>
-              <li><Link href="/leistungen/produktfotografie" className="hover:text-green-light">Produktfotografie</Link></li>
-              <li><Link href="/leistungen/eventfotografie" className="hover:text-green-light">Eventfotografie</Link></li>
+              {services.map((service) => (
+                <li key={service.slug}>
+                  <Link href={`/leistungen/${service.slug}`} className="hover:text-green-light">
+                    {service.shortTitle}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

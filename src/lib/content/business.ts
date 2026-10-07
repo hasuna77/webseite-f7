@@ -155,6 +155,29 @@ export const services: Service[] = [
     ],
     keywords: ["Eventfotograf NRW", "Firmenevent Fotograf", "Konferenzfotografie"],
   },
+  {
+    slug: "videografie",
+    title: "Videografie & Social-Media-Reels",
+    shortTitle: "Video & Reels",
+    summary:
+      "Hochzeits-Highlight-Filme, Instagram-Reels und Social-Content, der in Bewegung erzählt, was Fotos nicht können.",
+    description:
+      "Vom emotionalen Hochzeits-Reel über Behind-the-Scenes-Content bis zum Markenfilm: Wir drehen und schneiden kurze, hochwertige Videos für Instagram, TikTok & Co. – im selben klaren, zeitlosen Stil wie unsere Fotografie. Perfekt solo oder kombiniert mit einem Foto-Shooting.",
+    priceFrom: 290,
+    durationMinutes: 180,
+    features: [
+      "Hochzeits-Reel & Highlight-Film",
+      "Instagram- & TikTok-Content in mehreren Formaten",
+      "Schnitt, Farbkorrektur & Sounddesign",
+      "Kombinierbar mit jedem Foto-Shooting",
+    ],
+    keywords: [
+      "Videograf NRW",
+      "Hochzeitsvideo Ennepetal",
+      "Instagram Reels produzieren",
+      "Social Media Video Content",
+    ],
+  },
 ];
 
 export const seoKeywords = {
@@ -172,5 +195,7 @@ export const seoKeywords = {
     "Business Portraitfotograf NRW",
     "Hochzeitsfotograf Nordrhein-Westfalen",
     "Bewerbungsfotos Ennepetal",
+    "Hochzeitsvideo & Reel NRW",
+    "Instagram Reels produzieren lassen",
   ],
 };

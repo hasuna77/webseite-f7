@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, Aperture, Briefcase, Heart, Package, PartyPopper } from "lucide-react";
+import {
+  ArrowUpRight,
+  Aperture,
+  Briefcase,
+  Clapperboard,
+  Heart,
+  Package,
+  PartyPopper,
+} from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/sections/PageHero";
 import { CTASection } from "@/components/sections/CTASection";
@@ -13,11 +21,12 @@ const ICONS = {
   hochzeitsfotografie: Heart,
   produktfotografie: Package,
   eventfotografie: PartyPopper,
+  videografie: Clapperboard,
 } as const;
 
 export const metadata: Metadata = {
   title: "Leistungen",
-  description: `Portrait-, Business-, Hochzeits-, Produkt- und Eventfotografie von ${business.name} in ${business.address.city} und ganz NRW. Transparente Preise, flexible Termine.`,
+  description: `Portrait-, Business-, Hochzeits-, Produkt-, Event- und Videoproduktion (Reels & Social Content) von ${business.name} in ${business.address.city} und ganz NRW. Transparente Preise, flexible Termine.`,
   alternates: { canonical: "/leistungen" },
 };
 
@@ -39,7 +48,7 @@ export default function LeistungenPage() {
       <PageHero
         eyebrow="Leistungen"
         title="Fotografie für jeden Anlass."
-        description="Ob Portrait, Unternehmen, Hochzeit oder Produkt – jedes Shooting bekommt bei uns ein klares Konzept, professionelles Licht und eine ehrliche Preisstruktur."
+        description="Ob Portrait, Unternehmen, Hochzeit, Produkt oder Social-Media-Reel – jedes Shooting bekommt bei uns ein klares Konzept, professionelles Licht und eine ehrliche Preisstruktur."
       />
 
       <section className="bg-paper py-20 lg:py-28">
