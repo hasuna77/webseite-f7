@@ -20,19 +20,19 @@ export type Post = {
  */
 export const posts: Post[] = [
   {
-    slug: "fotostudio-duesseldorf-worauf-achten",
-    title: "Fotostudio in Düsseldorf wählen: 7 Dinge, auf die du achten solltest",
+    slug: "fotostudio-ennepetal-worauf-achten",
+    title: "Fotostudio in Ennepetal wählen: 7 Dinge, auf die du achten solltest",
     description:
-      "Worauf du bei der Wahl eines Fotostudios in Düsseldorf achten solltest – von Portfolio bis Preisgestaltung.",
+      "Worauf du bei der Wahl eines Fotostudios in Ennepetal und Umgebung achten solltest – von Portfolio bis Preisgestaltung.",
     excerpt:
-      "Die Auswahl an Fotostudios in Düsseldorf ist groß. Diese sieben Kriterien helfen dir, das passende Studio für dein Shooting zu finden.",
+      "Diese sieben Kriterien helfen dir, das passende Fotostudio in Ennepetal und Umgebung für dein Shooting zu finden.",
     category: "Ratgeber",
     publishedAt: "2026-01-15",
     readingMinutes: 5,
     sections: [
       {
         paragraphs: [
-          "Ob Bewerbungsfoto, Hochzeit oder Produktshooting: Die Wahl des richtigen Fotostudios entscheidet maßgeblich über das Ergebnis. In Düsseldorf gibt es eine große Auswahl an Fotograf:innen – hier sind sieben Kriterien, die dir bei der Entscheidung helfen.",
+          "Ob Bewerbungsfoto, Hochzeit oder Produktshooting: Die Wahl des richtigen Fotostudios entscheidet maßgeblich über das Ergebnis. Hier sind sieben Kriterien, die dir bei der Entscheidung helfen – egal ob in Ennepetal selbst oder der Umgebung.",
         ],
       },
       {
@@ -80,7 +80,7 @@ export const posts: Post[] = [
       {
         heading: "Fazit",
         paragraphs: [
-          "Nimm dir Zeit für die Auswahl – ein gutes Fotostudio in Düsseldorf erkennst du an Transparenz, einem stimmigen Portfolio und echtem Interesse an deinem Anliegen.",
+          "Nimm dir Zeit für die Auswahl – ein gutes Fotostudio erkennst du an Transparenz, einem stimmigen Portfolio und echtem Interesse an deinem Anliegen.",
         ],
       },
     ],

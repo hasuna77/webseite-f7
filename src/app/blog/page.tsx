@@ -8,7 +8,7 @@ import { posts } from "@/lib/content/posts";
 
 export const metadata: Metadata = {
   title: "Journal",
-  description: `Ratgeber, Tipps und Hintergründe rund um Fotografie von ${business.name} – für Düsseldorf und ganz NRW.`,
+  description: `Ratgeber, Tipps und Hintergründe rund um Fotografie von ${business.name} – für Ennepetal und ganz NRW.`,
   alternates: { canonical: "/blog" },
 };
 

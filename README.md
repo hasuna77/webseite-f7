@@ -10,7 +10,7 @@ SEO-Audits.
 
 Alle Geschäftsdaten (Name, Adresse, Telefon, Leistungen, Preise) sind
 **Platzhalter** in `src/lib/content/business.ts`. Für echtes lokales SEO
-("Fotostudio NRW", "Fotograf Düsseldorf" etc.) müssen Name, Adresse und
+("Fotostudio NRW", "Fotograf Ennepetal" etc.) müssen Name, Adresse und
 Telefonnummer exakt mit eurem Google-Unternehmensprofil übereinstimmen.
 
 Außerdem:

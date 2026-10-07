@@ -8,7 +8,7 @@ export const FAQ_ITEMS = [
   {
     question: "Kommt ihr auch außerhalb des Studios vorbei?",
     answer:
-      "Ja, nach Absprache fotografieren wir auch an deinem Wunschort – in deinem Büro, zu Hause oder an einer passenden Location in und um Düsseldorf.",
+      "Ja, nach Absprache fotografieren wir auch an deinem Wunschort – in deinem Büro, zu Hause oder an einer passenden Location in und um Ennepetal.",
   },
   {
     question: "Wie viel kostet ein Fotoshooting?",

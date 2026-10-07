@@ -15,19 +15,19 @@ const QUOTES = [
     quote:
       "Platzhalter-Zitat: Entspannte Atmosphäre, tolle Bilder – das Shooting hat sich wie ein guter Nachmittag angefühlt, nicht wie Arbeit.",
     name: "K. M.",
-    context: "Portraitshooting, Düsseldorf",
+    context: "Portraitshooting, Ennepetal",
   },
   {
     quote:
       "Platzhalter-Zitat: Unser gesamtes Team hat in unter zwei Stunden einheitliche Business-Fotos bekommen. Reibungslos organisiert.",
     name: "T. R.",
-    context: "Teamfotos, Düsseldorf",
+    context: "Teamfotos, Ennepetal",
   },
   {
     quote:
       "Platzhalter-Zitat: Die Hochzeitsfotos zeigen genau die Emotionen, die wir in Erinnerung behalten wollten – ganz ohne gestellte Posen.",
     name: "S. & J.",
-    context: "Hochzeit, Düsseldorf",
+    context: "Hochzeit, Ennepetal",
   },
 ];
 

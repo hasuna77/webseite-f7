@@ -80,7 +80,7 @@ async function generateCaptions(context: {
   url?: string;
 }): Promise<Captions> {
   return askClaudeForJson<Captions>({
-    system: `Du schreibst Social-Media-Captions für "${business.name}", ein Fotostudio in ${business.address.city} (NRW). Ton: warm, professionell, nicht reißerisch. Nutze passende, aber sparsame Emojis und relevante deutsche Hashtags (inkl. Standort-Hashtags wie #FotostudioDüsseldorf #FotografNRW).
+    system: `Du schreibst Social-Media-Captions für "${business.name}", ein Fotostudio in ${business.address.city} (NRW). Ton: warm, professionell, nicht reißerisch. Nutze passende, aber sparsame Emojis und relevante deutsche Hashtags (inkl. Standort-Hashtags wie #FotostudioEnnepetal #FotografNRW).
 
 Antworte NUR mit JSON in genau dieser Form:
 {"instagram": "...", "facebook": "...", "linkedin": "..."}

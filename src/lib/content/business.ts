@@ -1,37 +1,43 @@
 /**
  * Zentrale Geschäftsdaten.
  *
- * WICHTIG: Dies sind Platzhalterdaten. Für echtes lokales SEO (Google Maps,
- * "Fotostudio NRW", "Fotograf <Stadt>") MÜSSEN Name, Adresse, Telefonnummer
- * (NAP) exakt mit deinem Google-Unternehmensprofil übereinstimmen. Ersetze
- * die Werte hier – sie werden automatisch in Metadaten, JSON-LD (strukturierte
- * Daten), Footer und Kontaktseite verwendet.
+ * Name, E-Mail, Telefon, Stadt und Social-Handle stammen von der echten
+ * Visitenkarte (F7_Visitenkarte_Design_85x55mm.pdf). Straße/Hausnummer
+ * standen dort nicht drauf – bitte unten ergänzen. Die Telefonnummer auf
+ * der Karte (+49 176 12345678) sieht nach einem unausgefüllten
+ * Vorlagen-Platzhalter aus (durchgezählte Ziffern) – bitte prüfen und bei
+ * Bedarf durch die echte Nummer ersetzen.
+ *
+ * Für echtes lokales SEO (Google Maps, "Fotostudio NRW", "Fotograf
+ * <Stadt>") MÜSSEN diese Werte exakt mit deinem Google-Unternehmensprofil
+ * übereinstimmen.
  */
 
 export const business = {
   name: "F7 Studio",
   legalName: "F7 Studio",
-  tagline: "Fotografie mit Haltung.",
+  tagline: "Foto & Video Atelier",
   shortDescription:
-    "Hochwertige Portrait-, Business-, Hochzeits- und Produktfotografie in Düsseldorf – und in ganz Nordrhein-Westfalen.",
+    "Hochwertige Portrait-, Business-, Hochzeits- und Produktfotografie sowie Videoproduktion in Ennepetal – und in ganz Nordrhein-Westfalen.",
   description:
-    "F7 Studio ist ein inhabergeführtes Fotostudio in Düsseldorf. Wir fotografieren Menschen, Marken und Momente mit einem klaren, zeitlosen Stil.",
+    "F7 Studio ist ein inhabergeführtes Foto- & Video-Atelier in Ennepetal. Wir fotografieren und filmen Menschen, Marken und Momente mit einem klaren, zeitlosen Stil.",
   founded: "2016",
-  email: "studio@f7studio.de",
-  phone: "+49 211 1234 5678",
-  phoneDisplay: "0211 1234 5678",
-  whatsapp: "+4921112345678",
+  email: "info@f7studio.de",
+  // TODO: Nummer auf der Visitenkarte wirkt wie ein Platzhalter – bitte prüfen.
+  phone: "+49 176 12345678",
+  phoneDisplay: "0176 12345678",
+  whatsapp: "+4917612345678",
   address: {
-    street: "Kronprinzenstraße 12",
-    zip: "40213",
-    city: "Düsseldorf",
+    street: "[Straße & Hausnummer einfügen]",
+    zip: "58256",
+    city: "Ennepetal",
     region: "Nordrhein-Westfalen",
     country: "DE",
     countryName: "Deutschland",
   },
   geo: {
-    lat: 51.2254,
-    lng: 6.7763,
+    lat: 51.2989,
+    lng: 7.3419,
   },
   openingHours: [
     { days: "Mo–Fr", hours: "09:00–18:00" },
@@ -113,7 +119,7 @@ export const services: Service[] = [
       "Online-Galerie für Gäste",
       "Premium-Fotobuch optional",
     ],
-    keywords: ["Hochzeitsfotograf NRW", "Hochzeitsfotos Düsseldorf"],
+    keywords: ["Hochzeitsfotograf NRW", "Hochzeitsfotos Ennepetal"],
   },
   {
     slug: "produktfotografie",
@@ -154,17 +160,17 @@ export const services: Service[] = [
 export const seoKeywords = {
   primary: ["Fotostudio", "Fotograf", "Fotografen"],
   local: [
-    "Fotostudio Düsseldorf",
-    "Fotograf Düsseldorf",
+    "Fotostudio Ennepetal",
+    "Fotograf Ennepetal",
     "Fotostudio NRW",
     "Fotograf Nordrhein-Westfalen",
     "Fotografen NRW",
     "Fotostudio in meiner Nähe",
   ],
   longTail: [
-    "professionelles Fotostudio Düsseldorf",
+    "professionelles Fotostudio Ennepetal",
     "Business Portraitfotograf NRW",
     "Hochzeitsfotograf Nordrhein-Westfalen",
-    "Bewerbungsfotos Düsseldorf",
+    "Bewerbungsfotos Ennepetal",
   ],
 };
