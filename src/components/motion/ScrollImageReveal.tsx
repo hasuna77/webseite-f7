@@ -18,8 +18,8 @@ export function ScrollImageReveal({
   imageSrc,
   imageAlt,
 }: {
-  eyebrow: string;
-  title: ReactNode;
+  eyebrow?: string;
+  title?: ReactNode;
   className?: string;
   children?: ReactNode;
   imageSrc?: string;
@@ -61,15 +61,19 @@ export function ScrollImageReveal({
           {children}
         </motion.div>
 
-        <motion.div
-          style={{ opacity: textOpacity, y: textY }}
-          className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
-        >
-          <span className="text-xs font-medium uppercase tracking-[0.3em] text-green">
-            {eyebrow}
-          </span>
-          <h2 className="mt-4 max-w-2xl font-display text-4xl text-ink sm:text-6xl">{title}</h2>
-        </motion.div>
+        {title && (
+          <motion.div
+            style={{ opacity: textOpacity, y: textY }}
+            className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
+          >
+            {eyebrow && (
+              <span className="text-xs font-medium uppercase tracking-[0.3em] text-green">
+                {eyebrow}
+              </span>
+            )}
+            <h2 className="mt-4 max-w-2xl font-display text-4xl text-ink sm:text-6xl">{title}</h2>
+          </motion.div>
+        )}
       </div>
     </section>
   );
