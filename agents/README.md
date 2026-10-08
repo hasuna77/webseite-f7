@@ -1,16 +1,20 @@
 # Automatisierungs-Agents
 
-Drei eigenständige, per Kommandozeile ausführbare Node/TypeScript-Skripte –
-unabhängig von der laufenden Website, aber mit denselben Geschäftsdaten
-(`src/lib/content/business.ts`). Sie laufen lokal, per Cronjob oder in einer
-CI-Pipeline (z. B. GitHub Actions) und sind standardmäßig **Dry-Run**: Es
-wird nie unbemerkt etwas veröffentlicht.
+Eigenständige, per Kommandozeile ausführbare Node/TypeScript-Skripte –
+unabhängig von der laufenden Website. Die ersten drei teilen sich die
+Geschäftsdaten dieser Website (`src/lib/content/business.ts`), der
+`innoviadruck-content-agent` ist für eine **andere** Firma (eine Druckerei,
+nicht Teil dieses Website-Repos) und bringt seine eigenen Geschäftsdaten mit.
+Alle laufen lokal, per Cronjob oder in einer CI-Pipeline (z. B. GitHub
+Actions) und sind standardmäßig **Dry-Run**: Es wird nie unbemerkt etwas
+veröffentlicht.
 
 | Agent | Zweck | Befehl |
 |---|---|---|
-| `content-agent` | Schreibt neue SEO-Blogartikel-Entwürfe fürs Journal | `npm run agent:content -- --count 2` |
+| `content-agent` | Schreibt neue SEO-Blogartikel-Entwürfe fürs Journal (F7 Studio) | `npm run agent:content -- --count 2` |
 | `posting-agent` | Erstellt Social-Media-Captions (IG/FB/LinkedIn) und postet sie optional live | `npm run agent:posting -- --slug <slug> --live` |
 | `seo-agent` | Crawlt die Sitemap, prüft On-Page-SEO, erstellt priorisierten Maßnahmenplan | `npm run agent:seo -- --url https://deine-domain.de` |
+| `innoviadruck-content-agent` | Schreibt SEO-Blogartikel-Entwürfe für die Druckerei innoviadruck.de | `npm run agent:innoviadruck-content -- --count 2` |
 
 ## Einrichtung
 
@@ -111,3 +115,27 @@ Content- und Posting-Agent lassen sich analog als geplante Workflows oder
 lokale Cronjobs einrichten – angepasst an eure Freigabe-Prozesse (z. B.
 Content-Agent läuft wöchentlich, ein Mensch prüft die Entwürfe, danach
 manuell `--apply` oder Posting-Agent mit `--live`).
+
+## 4. innoviadruck-content-agent
+
+**Achtung: eigenständiges Werkzeug für eine andere Firma.** innoviadruck.de
+ist keine Website aus diesem Repo (dieses Repo ist F7 Studio) – der Agent
+nutzt deshalb seine eigenen Geschäftsdaten in
+`agents/innoviadruck-content-agent/business.ts`, nicht `src/lib/content/business.ts`.
+
+Beim Erstellen war `innoviadruck.de` nicht erreichbar (kein DNS-Eintrag),
+daher enthält `business.ts` aktuell nur **Platzhalter** für eine typische
+Online-Druckerei (Adresse, genaues Leistungsangebot, Preise). **Bitte diese
+Datei zuerst mit den echten Daten befüllen** (TODO-Kommentare darin) –
+sonst generiert Claude Ratgebertexte mit falschen Fakten.
+
+```bash
+npm run agent:innoviadruck-content -- --count 2                       # 2 neue Themen vorschlagen & schreiben
+npm run agent:innoviadruck-content -- --topic "Welches Papier für Flyer?"  # gezielt 1 Artikel
+```
+
+Entwürfe landen als JSON unter `agents/innoviadruck-content-agent/output/`
+(Format: Titel, Meta-Description, Abschnitte – wie beim `content-agent`).
+Es gibt **kein `--apply`**, da dieses Repo keine Website für innoviadruck.de
+enthält, in die automatisch eingefügt werden könnte – die Entwürfe müssen
+manuell in die jeweilige Ziel-Website übernommen werden.

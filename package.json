@@ -12,7 +12,8 @@
     "lint": "eslint",
     "agent:content": "tsx agents/content-agent/index.ts",
     "agent:posting": "tsx agents/posting-agent/index.ts",
-    "agent:seo": "tsx agents/seo-agent/index.ts"
+    "agent:seo": "tsx agents/seo-agent/index.ts",
+    "agent:innoviadruck-content": "tsx agents/innoviadruck-content-agent/index.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.131.0",
