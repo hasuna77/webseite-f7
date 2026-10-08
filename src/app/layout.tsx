@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ChatWidget } from "@/components/chat/ChatWidget";
+import { ChromeGate } from "@/components/layout/ChromeGate";
 import { business, seoKeywords } from "@/lib/content/business";
 import { localBusinessJsonLd } from "@/lib/seo/jsonld";
 
@@ -67,10 +68,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd()) }}
         />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <ChatWidget />
+        <ChromeGate header={<Header />} footer={<Footer />} chat={<ChatWidget />}>
+          {children}
+        </ChromeGate>
       </body>
     </html>
   );
